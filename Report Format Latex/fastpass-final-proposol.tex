@@ -347,14 +347,15 @@ Explain the design (how you plan to implement your work) of your project. Adjust
 \begin{figure}[!h]\centering
  \setlength{\fboxrule}{0.2mm} 
 \setlength{\fboxsep}{5pt}  
-\fbox{\includegraphics[width=0.6\textwidth]{./Diagram/FastPass Diagram-Ues Case _การจอง.pdf}}
+\fbox{\includegraphics[width=0.7\textwidth]{./Diagram/FastPass Diagram-Ues Case _การจอง.pdf}}
 \caption{Ues Case Diagram (ระบบจอดรถ)}\label{fig:FastPass Diagram-Ues Case _การจอง}
 \end{figure}
 
+\clearpage
 \begin{figure}[!h]\centering
  \setlength{\fboxrule}{0.2mm} 
 \setlength{\fboxsep}{5pt}  
-\fbox{\includegraphics[width=0.6\textwidth]{./Diagram/FastPass Diagram-Use Case _ระบบจัดการส่วนกลาง.pdf}} 
+\fbox{\includegraphics[width=0.7\textwidth]{./Diagram/FastPass Diagram-Use Case _ระบบจัดการส่วนกลาง.pdf}} 
 \caption{Ues Case Diagram (ระบบจัดการส่วนกลาง)}\label{fig:model2}
 \end{figure}
 
@@ -498,6 +499,259 @@ Explain the design (how you plan to implement your work) of your project. Adjust
     \hline
 \end{tabular}
 \label{tab:usecase_discount}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ดูสถานที่จอดรถ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage 
+
+\subsubsection{ดูสถานที่จอดรถ}
+
+\begin{table}[h!] 
+\centering
+\renewcommand{\arraystretch}{1.3} % เพิ่มความสูงบรรทัดให้ดูไม่อึดอัด
+\begin{tabular}{p{3.5cm} p{11cm}} % กำหนดความกว้าง: คอลัมน์ซ้าย 3.5cm, ขวา 11cm
+    \hline
+    Use Case Name & ดูสถานที่จอดรถ (View Parking Status) \\
+    \hline
+    Actor & บุคลากร (Staff) / ผู้มาติดต่อ (Visitor) / บุคคลภายนอก(Guest) \\
+    \hline
+    Goal & เพื่อดูสถานะและตำแหน่งของช่องจอดรถในปัจจุบัน \\
+    \hline
+    Precondition & ผู้ใช้งานเข้าถึงระบบผ่านหน้าเว็บแอปพลิเคชัน ในส่วนนี้ไม่จำเป็นต้อง Login สำหรับ Guest \\
+    \hline
+    Main success scenario & 
+    \vspace{-0.5em} 
+    \begin{enumerate}[leftmargin=*, nosep, after=\vspace{0.5em}]
+        \item ผู้ใช้งานเข้ามาระบบจะแสดงแผนที่ของลานจอดรถ
+        \item ระบบแสดงแผนที่ของลานจอดรถจอดรถทั้งหมด
+        \item ผู้ใช้งานเลือกโซนหรือชั้นที่ต้องการดู
+        \item ระบบเรียก "รายงานจำนวนช่องจอดรถ" เพื่อดึงข้อมูล Real-time ของจำนวนช่องจอดที่ว่างในโซนที่ผู้ใช้เลือก
+        \item ระบบแสดงผลกราฟิกแผนที่ พร้อมระบุสีสถานะและจำนวนช่องว่างคงเหลือ
+    \end{enumerate} 
+    \\
+    \hline
+    Extensions (a) & 
+    \vspace{-0.5em}
+    \begin{enumerate}[label=\arabic*a., start=4, leftmargin=*, nosep, after=\vspace{0.5em}]
+        \item ระบบไม่สามารถเชื่อมต่อกับเซนเซอร์หรือฐานข้อมูลสถานะได้
+        \item ระบบแสดงข้อความ "ไม่สามารถแสดงสถานะล่าสุดได้ (Offline)"
+        \item ระบบแสดงข้อมูลล่าสุดที่แคชไว้พร้อมระบุเวลาอัปเดต
+    \end{enumerate}
+    \\
+    \hline
+    Postcondition & ผู้ใช้งานได้รับทราบข้อมูลสถานะที่จอดรถเพื่อประกอบการตัดสินใจในการเลือกช่องจอดรถ \\
+    \hline
+\end{tabular}
+\label{tab:usecase_view_parking}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% จัดการช่องจอดรถรายการโปรด %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{จัดการช่องจอดรถรายการโปรด}
+
+\begin{table}[h!] 
+\centering
+\renewcommand{\arraystretch}{1.3} % เพิ่มความสูงบรรทัดให้ดูไม่อึดอัด
+\begin{tabular}{p{3.5cm} p{11cm}} % กำหนดความกว้าง: คอลัมน์ซ้าย 3.5cm, ขวา 11cm
+    \hline
+    Use Case Name & จัดการช่องจอดรถรายการโปรด (Manage Favorite Spots) \\
+    \hline
+    Actor & บุคลากร (Staff) / ผู้มาติดต่อ (Visitor) / บุคคลภายนอก(Guest) \\
+    \hline
+    Goal & เพื่อเพิ่ม ลบ หรือแก้ไขรายการช่องจอดรถที่ใช้บ่อย เพื่อความสะดวกรวดเร็วในการจอง \\
+    \hline
+    Precondition & ผู้ใช้งานต้องเข้าสู่ระบบเรียบร้อยแล้ว \\
+    \hline
+    Main success scenario & 
+    \vspace{-0.5em} 
+    \begin{enumerate}[leftmargin=*, nosep, after=\vspace{0.5em}]
+        \item ผู้ใช้งานเลือกเมนู "บันทึกแล้ว"
+        \item ระบบแสดงรายชื่อช่องจอดที่บันทึกไว้ (ถ้ามี)
+        \item ผู้ใช้งานกดปุ่ม "เพิ่มรายการบันทึก" จากช่องจอดที่เลือก หรือกด "ลบ" รายการเดิม
+        \item ระบบบันทึกการเปลี่ยนแปลงลงในฐานข้อมูลส่วนตัวของผู้ใช้
+    \end{enumerate} 
+    \\
+    \hline
+    Extensions (a) & 
+    \vspace{-0.5em}
+    \begin{enumerate}[label=\arabic*a., start=4, leftmargin=*, nosep, after=\vspace{0.5em}]
+        \item กรณีเพิ่มช่องจอดที่ซ้ำกับที่มีอยู่แล้ว
+        \item ระบบแจ้งเตือน "ยกเลิกรายการบันทึก"
+        \item ระบบยกเลิกการเพิ่ม
+    \end{enumerate}
+    \\
+    \hline
+    Postcondition & รายการช่องจอดรถโปรดของผู้ใช้งานได้รับการอัปเดต บันทึกเป็นรายการบันทึก / เลิกบันทึกเป็นรายการบันทึก \\
+    \hline
+\end{tabular}
+\label{tab:usecase_manage_favorites}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ดูรายการแจ้งเตือน %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage 
+
+\subsubsection{ดูรายการแจ้งเตือน}
+
+\begin{table}[h!] 
+\centering
+\renewcommand{\arraystretch}{1.3} % เพิ่มความสูงบรรทัดให้ดูไม่อึดอัด
+\begin{tabular}{p{3.5cm} p{11cm}} % กำหนดความกว้าง: คอลัมน์ซ้าย 3.5cm, ขวา 11cm
+    \hline
+    Use Case Name & ดูรายการแจ้งเตือน (View Notifications) \\
+    \hline
+    Actor & บุคลากร (Staff) / ผู้มาติดต่อ (Visitor) \\
+    \hline
+    Goal & ผู้ใช้จะได้รับการแจ้งเตือนต่างๆ เช่น สถานะการจอง หรือเตือนเวลาจอดเมื่อใกล้หมดเวลา \\
+    \hline
+    Precondition & ผู้ใช้งานต้องเข้าสู่ระบบและทำรายการจองเรียบร้อยแล้ว \\
+    \hline
+    Main success scenario & 
+    \vspace{-0.5em} 
+    \begin{enumerate}[leftmargin=*, nosep, after=\vspace{0.5em}]
+        \item ผู้ใช้งานกดที่ไอคอน "กระดิ่งแจ้งเตือน" บนหน้าจอหลัก
+        \item ระบบแสดงรายการแจ้งเตือนของผู้ใช้งาน
+        \item ระบบแสดงรายการแจ้งเตือน โดยเรียงจากใหม่สุดไปเก่าสุด
+        \item ผู้ใช้งานเลือกกดดูรายละเอียดของรายการที่ต้องการ
+        \item ระบบแสดงรายละเอียดของแจ้งเตือนนั้นๆอย่างครบถ้วน
+        \item ระบบเปลี่ยนสถานะของรายการนั้นเป็น "อ่านแล้ว" (กระดิ่งแจ้งเตือนจะไม่แสดงปุ่มสีแดงหากผู้ใช้อ่านทุกรายการแจ้งเตือนแล้ว)
+    \end{enumerate} 
+    \\
+    \hline
+    Extensions (a) & 
+    \vspace{-0.5em}
+    \begin{enumerate}[label=\arabic*a., start=2, leftmargin=*, nosep, after=\vspace{0.5em}]
+        \item กรณีไม่มีรายการแจ้งเตือนเลย
+        \item ระบบแสดงข้อความ "กระดิ่งแจ้งเตือน" (ไม่แสดงปุ่มสีแดง)
+    \end{enumerate}
+    \vspace{-0.5em}
+    \begin{enumerate}[label=\arabic*b., start=4, leftmargin=*, nosep, after=\vspace{0.5em}]
+        \item ผู้ใช้งานต้องการลบการแจ้งเตือน
+        \item ผู้ใช้งานปัดรายการหรือกดปุ่มลบ
+        \item ระบบลบรายการนั้นออกจากรายการแสดงผล
+    \end{enumerate}
+    \\
+    \hline
+    Postcondition & ผู้ใช้งานได้รับทราบข้อมูลข่าวสารหรือสถานะล่าสุด และสถานะการอ่านถูกอัปเดต \\
+    \hline
+\end{tabular}
+\label{tab:usecase_view_notifications}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ดูรายงาน Report ของลานจอดรถ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ดันหัวข้อลงไปหน้าใหม่
+\clearpage 
+
+\subsubsection{ดูรายงาน Report ของลานจอดรถ}
+
+\begin{table}[h!] 
+\centering
+\renewcommand{\arraystretch}{1.3} % เพิ่มความสูงบรรทัดให้ดูไม่อึดอัด
+\begin{tabular}{p{3.5cm} p{11cm}} % กำหนดความกว้าง: คอลัมน์ซ้าย 3.5cm, ขวา 11cm
+    \hline
+    Use Case Name & ดูรายงาน Report ของลานจอดรถ (View Parking Report) \\
+    \hline
+    Actor & Admin (ผู้ดูแลระบบ) \\
+    \hline
+    Goal & เพื่อดูภาพรวมสถิติ, รายได้, และสถานะการใช้งานของลานจอดรถสำหรับการวิเคราะห์และบริหารจัดการ \\
+    \hline
+    Precondition & Admin ต้องเข้าสู่ระบบเรียบร้อยแล้ว \\
+    \hline
+    Main success scenario & 
+    \vspace{-0.5em} 
+    \begin{enumerate}[leftmargin=*, nosep, after=\vspace{0.5em}]
+        \item Admin เลือกเมนู "หน้าหลัก" หรือ "รายงานและวิเคราะห์"
+        \item ระบบดึงข้อมูลสรุปทางสถิติจากฐานข้อมูล
+        \item ระบบแสดงผล  "สรุปข้อมูลสำคัญ" ได้แก่
+            \begin{itemize}[leftmargin=1.5em, nosep]
+                \item จำนวนลานจอดรถทั้งหมดและที่เพิ่มใหม่
+                \item ที่ว่างขณะนี้ (จำนวนคัน) เทียบกับความจุทั้งหมด
+                \item อัตราการใช้งาน (\%) และแนวโน้มเทียบกับเมื่อวาน
+                \item รายได้วันนี้ (บาท) และแนวโน้มเทียบกับเมื่อวาน
+            \end{itemize}
+        \item ระบบแสดง "กราฟและแผนภูมิ"
+            \begin{itemize}[leftmargin=1.5em, nosep]
+                \item กราฟวงกลมแสดงสัดส่วนประเภทรถ (รถยนต์, มอเตอร์ไซค์, EV)
+                \item กราฟแท่งแสดงแนวโน้มการใช้งานรายวัน/รายเดือน
+            \end{itemize}
+        \item ระบบแสดง "สถานะเรียลไทม์" ของแต่ละลานจอด (เช่น ตึก S2 ว่างกี่ช่อง, ตึก N18 เต็มหรือไม่)
+        \item Admin สามารถใช้งาน "ตัวกรอง" (Filter) เพื่อเลือกดูข้อมูลตามวันที่ (dd/mm/yyyy), ประเภทพาหนะ หรือสถานะ
+        \item ระบบอัปเดตข้อมูลบนหน้าจอตามเงื่อนไขที่ Admin เลือก
+    \end{enumerate} 
+    \\
+    \hline
+    Extensions (a) & 
+    \vspace{-0.5em}
+    \begin{enumerate}[label=\arabic*a., start=6, leftmargin=*, nosep, after=\vspace{0.5em}]
+        \item กรณีเลือกช่วงเวลาที่ไม่มีข้อมูลการใช้งาน
+        \item ระบบแสดงกราฟว่างเปล่า และแจ้งเตือนว่า "ไม่พบข้อมูลในช่วงเวลาดังกล่าว"
+    \end{enumerate}
+    \vspace{-0.5em}
+    \begin{enumerate}[label=\arabic*b., start=2, leftmargin=*, nosep, after=\vspace{0.5em}]
+        \item ระบบฐานข้อมูลสถิติขัดข้อง
+        \item ระบบแสดงข้อความ "Failed to load dashboard data"
+    \end{enumerate}
+    \\
+    \hline
+    Postcondition & Admin ได้รับทราบข้อมูลสรุปผลการดำเนินงานเพื่อนำไปใช้ในการตัดสินใจในอนาคต \\
+    \hline
+\end{tabular}
+\label{tab:usecase_view_report}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% กำหนดค่าระบบจอดรถ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ดันหัวข้อลงไปหน้าใหม่
+\clearpage 
+
+\subsubsection{กำหนดค่าระบบจอดรถ}
+
+\begin{table}[h!] 
+\centering
+\renewcommand{\arraystretch}{1.3} % เพิ่มความสูงบรรทัดให้ดูไม่อึดอัด
+\begin{tabular}{p{3.5cm} p{11cm}} % กำหนดความกว้าง: คอลัมน์ซ้าย 3.5cm, ขวา 11cm
+    \hline
+    Use Case Name & กำหนดค่าระบบจอดรถ (Configure Parking System Settings) \\
+    \hline
+    Actor & Admin (ผู้ดูแลระบบ) \\
+    \hline
+    Goal & เพื่อตั้งค่าพารามิเตอร์ต่างๆ ของลานจอดรถ เช่น อัตราค่าบริการ, เวลาเปิด-ปิด และสถานะการเปิดใช้งานของช่องจอดต่างๆ \\
+    \hline
+    Precondition & Admin ต้องเข้าสู่ระบบเรียบร้อยแล้ว \\
+    \hline
+    Main success scenario & 
+    \vspace{-0.5em} 
+    \begin{enumerate}[leftmargin=*, nosep, after=\vspace{0.5em}]
+        \item Admin เลือกเมนู "จัดการข้อมูลที่จอดรถ" จากแถบเมนูด้านซ้าย
+        \item ระบบแสดงรายการลานจอดรถทั้งหมด (เช่น ลานจอดรถ 14 ชั้น S2, อาคาร N16) พร้อมสถานะปัจจุบัน, ราคา, และความจุ
+        \item Admin เลือกกดปุ่ม "แก้ไข" (Edit) ที่รายการที่ต้องการปรับปรุง หรือกด "เพิ่มสถานที่ใหม่"
+        \item ระบบแสดงฟอร์มสำหรับกำหนดค่า:
+            \begin{itemize}[leftmargin=1.5em, nosep]
+                \item \textbf{ข้อมูลทั่วไป:} ชื่อสถานที่, ที่อยู่
+                \item \textbf{การใช้งาน:} ประเภทพาหนะที่รองรับ (รถยนต์, EV, มอเตอร์ไซค์)
+                \item \textbf{ความจุ (Capacity):} จำนวนช่องจอดสูงสุด
+                \item \textbf{ค่าบริการ:} ราคาต่อชั่วโมง (เช่น 10 บาท/ชม.)
+                \item \textbf{เวลาทำการ:} เวลาเปิด-ปิด (เช่น 08:00 - 20:00 น.)
+            \end{itemize}
+        \item Admin ทำการแก้ไขข้อมูลที่ต้องการเปลี่ยนแปลง
+        \item Admin กดปุ่ม "บันทึก"
+        \item ระบบตรวจสอบความถูกต้องของข้อมูล (Validation) และบันทึกลลงฐานข้อมูล
+        \item ระบบแสดงข้อความแจ้งเตือน "บันทึกข้อมูลสำเร็จ" และกลับสู่หน้ารายการ
+    \end{enumerate} 
+    \\
+    \hline
+    Extensions (a) & 
+    \vspace{-0.5em}
+    \begin{enumerate}[label=\arabic*a., start=3, leftmargin=*, nosep, after=\vspace{0.5em}]
+        \item Admin ต้องการปิดปรับปรุงลานจอดชั่วคราว
+        \item Admin กดปุ่ม "ปิด" หรือเปลี่ยนสถานะเป็น "กำลังจะปิด/ปิดใช้งาน"
+        \item ระบบอัปเดตสถานะใน Real-time Dashboard เพื่อไม่ให้ User จองเข้ามาได้
+    \end{enumerate}
+    \\
+    \hline
+    Postcondition & ค่าการตั้งค่าใหม่ (เช่น ราคาใหม่, สถานะเปิด/ปิด) ถูกนำไปใช้ในระบบทันที \\
+    \hline
+\end{tabular}
+\label{tab:usecase_config_system}
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
