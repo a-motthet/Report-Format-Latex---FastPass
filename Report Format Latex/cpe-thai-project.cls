@@ -43,6 +43,11 @@
 \usepackage{enumitem} % ใช้สำหรับปรับแต่ง List ในตาราง
 \usepackage{float}
 
+% --- ส่วนที่คุณเพิ่ม ---
+\RequirePackage{indentfirst}  % ในไฟล์ .cls นิยมใช้ RequirePackage
+\setlength{\parindent}{1.5cm} 
+% ---------------------
+
 % April, 2022 by Thanin
 % Fix error when use \url with polyglossia in Thai. Url default font doesn't work in Thai environment.
 % Setting the style to be the same as Thai font solve the issue
