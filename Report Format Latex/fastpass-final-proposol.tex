@@ -4,8 +4,12 @@
 \documentclass[12pt,oneside,openright,a4paper]{cpe-thai-project}
 \usepackage{indentfirst}
 \setlength{\parindent}{1cm}
+\usepackage{titlesec}
+\titlespacing*{\subsubsection}{0.5cm}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\usepackage{tabularx}
 
-
+\usepackage{tabularx}  % สำหรับตารางที่จัดความกว้างอัตโนมัติ
+\usepackage[table]{xcolor} % สำหรับใส่สีพื้นหลังตาราง
 
 \usepackage{polyglossia}
 \setdefaultlanguage{thai}
@@ -238,7 +242,6 @@ MANET & Mobile Ad Hoc Network
 
 จากที่กล่าวมาข้างต้น กลุ่มของพวกเราจึงเกิดแนวคิดพัฒนาระบบที่จอดรถแบบเรียลไทม์และปรับปรุงระบบมอบสิทธิพิเศษแก่ผู้มาใช้งานที่สะดวกมากยิงขึ้น และแก้การใช้แสตมป์เพื่อเพิ่มเวลาจอดรถฟรีแบบเดิมๆ เพื่อช่วยให้วางแผนการเดินทางได้ดีขึ้น ลดความกังวลและความเครียดจากการหาที่จอด เมื่อมีระบบจัดการที่มีประสิทธิภาพ จะสามารถใช้เวลาได้คุ้มค่ามากขึ้นและใช้ชีวิตได้อย่างเต็มที่
 
-
 %%%%%%%%%%%%%%%%%%%%% ตัวอย่าง %%%%%%%%%%%%%%%%%%%%%
 %ตัวอย่างการใส่อ้างอิงที่มา -> \cite{hypersense} ถ้าต้องการใส่แหล่งอ้างอิงมากกว่า 1 ให้ทำดังนี้ -> \cite{hypersense,bworld} มนุษย์มีความสามารถในการประดิษฐ์คิดค้น มาตั้งแต่สมัยโบราณ ย้อนกลับไปตั้งแต่สมัยยุคปฏิวัติอุตสาหกรรม ที่มนุษย์ได้คิดค้นเครื่องจักรไอน้ำขึ้นมาแล้ว เพื่อเป็นเครื่องทุ่นแรงในการผลิตสิ่งต่างๆ กาลเวลาผ่านพลังไอน้ำก็แปรเปลี่ยนเป็นพลังงานไฟฟ้า จนต่อมาก็ได้มีสิ่งประดิษฐ์ที่พลิกประวัติศาสตร์โลกเกิดขึ้น นั่นก็คือเครื่องคอมพิวเตอร์ การมาของคอมพิวเตอร์นั่นช่วยให้เครื่องจักรสามารถควบคุมแบบอัตโนมัติได้ แม้คอมพิวเตอร์จะมีประโยชน์เป็นอย่างมาก แต่ก็ปฏิเสธไม่ได้ว่าบางอย่างการควบคุมโดย มนุษย์นั้นมีความจำเป็นมากกว่า ซึ่งในปัจจุบันการควบคุมคอมพิวเตอร์ของมนุษย์ ไม่ได้ใช้อวัยวะเพียงแค่มือสองมือ แต่ยังมีการนำอวัยวะอื่นภายในร่างกายมาใช้ควบคุมคอมพิวเตอร์ด้วย ยกตัวอย่างเช่น Amazon Alexa เป็นลำโพงที่เราสามารถออกคำสั่งเสียงเพื่อควบคุมการทำงานต่างๆ ไม่ว่าจะเป็น การตั้งเวลา, สร้างกิจกรรมในปฏิทิน, การแจ้งเตือน, การตรวจเช็คข่าวหรือแม้กระทั่งการสั่งการให้ เปิด-ปิด หลอดไฟภายในห้องได้ อีกทั้งยังมี Kinect Xbox ที่เป็นอุปกรณ์ที่ใช้ตรวจจับการเคลื่อนไหวแล้วนำไปควบคุมตัวละครภายในวีดีโอเกม จนทำให้เกิดความคิดที่จะใช้สมองควบคุมคอมพิวเตอร์โดยตรง โดยหวังผลให้เกิดประสิทธิภาพที่ดีขึ้นกว่าการใช้อวัยวะในการควบคุม จึงเป็นจุดเริ่มต้นของการจินตนาการการเคลื่อนไหว (Motor Imagery) ซึ่งเป็นการจินตนาการว่าเราต้องการจะทำอะไร โดยที่เราไม่ได้ทำสิ่งนั้นจริง เมื่อเราจินตนาการสมองของเราจะส่งสัญญาณคลื่นไฟฟ้าสมองออกมา ซึ่งสามารถตรวจวัดได้ด้วยเครื่องวัดสัญญาณไฟฟ้าสมอง (EEG) 
 %แต่ด้วยความยุ่งยากของอุปกรณ์เครื่องวัดสัญญาณคลื่นไฟฟ้าสมองและมีค่าใช้จ่ายที่ค่อนข้างสูง ทางกลุ่มเราจึงเล็งเห็นว่า อยากที่จะพัฒนาอุปกรณ์เครื่องวัดสัญญาณคลื่นไฟฟ้าสมอง (EEG) โดยมีการลดจำนวนขั้ววัดสัญญาณคลื่นไฟฟ้าสมองให้น้อยลง และมีการพัฒนาการแยกประเภทของสัญญาณให้ดีขึ้น เพื่อการทำงานและควบคุมได้หลากหลายรูปแบบขึ้น ตามอุปกรณ์เครื่องวัดสัญญาณคลื่นไฟฟ้าสมองที่เราใช้ หากผลงานเสร็จสมบูรณ์ จะช่วยให้ผู้คนสามารถเข้าถึงและใช้ง่ายอุปกรณ์เครื่องวัดสัญญาณคลื่นไฟฟ้าสมองได้ง่ายขึ้น จากการที่ความยุ่งยากและค่าใช้จ่ายที่ของอุปกรณ์ลดลง และสามารถนำไปประยุกต์ใช้ในการใช้งานต่างๆได้ เช่น การฟื้นฟูสมรรถภาพทางสมองสำหรับนักกีฬา, การฟื้นฟูสมรรถภาพในผู้ป่วยที่ได้รับผลกระทบจากโรคหลอดเลือดสมอง, การควบคุมอุปกรณ์ช่วยเหลือสำหรับผู้พิการ หรือการเล่นเกมส์ เป็นต้น
@@ -251,79 +254,295 @@ MANET & Mobile Ad Hoc Network
 
 \section{วัตถุประสงค์}
 ระบุสิ่งที่จะทำในโครงการ ซึ่งจะใช้สำหรับการประเมินว่าโครงงานทำสำเร็จหรือไม่
+\vspace{-0.3cm}
 \begin{itemize}
-    \item เพื่อศึกษาและจับจุดสำคัญของข้อมูลภายในเรซูเมของนักศึกษากลุ่มเป้าหมาย
-    \item เพื่อพัฒนาโมเดลปัญญาประดิษฐ์สำหรับวิเคราะห์ข้อมูลเรซูเมของนักศึกษาออกมาเป็นอาชีพที่เหมาะสมกับตัวนักศึกษาได้
+    \item เพื่อพัฒนาระบบจัดการที่จอดรถ (Parking Management System) ที่ใช้ AI ในการควบคุมการเข้าถึงพื้นที่ (Access Control) สำหรับการใช้งานที่หลากหลาย (Multi-Purpose)
+    \item เพื่อพัฒนาระบบซอฟต์แวร์ที่รองรับการใช้งานในรูปแบบหลายผู้ใช้ ผู้ดูแลระบบสามารถให้สิทธิ์ในการจัดการการเชิญผู้มาเยี่ยมชมแก่ผู้ใช้ได้
     \item เพื่อพัฒนาเว็บแอปพลิเคชันสำหรับนำมาใช้เป็นตัวกลางในการใช้งานปัญญาประดิษฐ์ เป็นชุมชนและตัวช่วยด้านการพัฒนาตนเองของกลุ่มเป้าหมายได้
-    \item เพื่อลดปัญหาการค้นหาสิ่งที่เหมาะสมและพัฒนาตนเอง ช่วยเหลือการปรับข้อมูลเรซูเม และเป็นชุมชนแก่นักศึกษาในอนาคต
 \end{itemize}
+\clearpage
 \section{ขอบเขตของโครงงาน}
+\subsection{การแก้ปัญหา}
+สำหรับผู้ใช้งาน (User) ระบบจะเพิ่มความสะดวกในการใช้งานสำหรับผู้มาติดต่อ โดยระบบนี้สามารถค้นหาที่จอดรถที่ว่างและใกล้มากที่สุดให้กับผู้ใช้งาน และยังสามารถจองล่วงหน้าสำหรับการเข้าใช้งานได้ รวมถึงบันทึกสถานที่ลานจอดไว้สำหรับการใช้งานที่รวดเร็วมากยิ่งขึ้นอีก สำหรับแขกรับเชิญ (Visitor) จะมีความสามารถเพิ่มเติมคือ สามารถรับ QR Code จากผู้ดูแลระบบเพื่อนำมาใช้ในการเข้า-ออกพื้นที่ได้ตามสิทธิ์ที่กำหนด นอกจากนี้ ระบบยังรองรับการควบคุมผ่าน IoT ที่ติดตั้งไว้ตามไม้กั้นทางเข้าออก จะทำงานร่วมกับข้อมูลป้ายทะเบียนรถ เพื่ออนุญาตให้ผู้มาติดต่อสามารถผ่านเข้า-ออกได้อย่างปลอดภัยและเป็นระบบ
+\vspace{0.3cm}
+สำหรับผู้ดูแลระบบ (Admin) จะสามารถสร้างคำเชิญหรือนัดหมายสำหรับผู้มาติดต่อและส่ง QR Code ให้ล่วงหน้าได้ อีกทั้งยังสามารถตรวจสอบประวัติการเข้า-ออกของผู้มาติดต่อที่มาพบได้อย่างละเอียด ระบบยังรองรับการจัดการพื้นที่ โดยผู้ดูแลสามารถกำหนดสิทธิ์การเข้าถึงในแต่ละพื้นที่ได้ ไม่ว่าจะเป็นการควบคุมไม้กั้นในลานจอดรถ หรือการกำหนดช่องจอดรถที่ไม่สามารถใช้งานได้ เพื่อเพิ่มความปลอดภัยและความเป็นระเบยบของพื้นที่โดยรวม
 
-Explain the scope of your works. 
+\subsection{ฟีเจอร์}
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.9\textwidth]{./Section 1/Step Go In.jpg}}
+\caption{Step Go In}\label{fig:Step Go In}
+\end{figure}
+\vspace{-1cm}
+\subsubsection{View Parking Map}
+ฟีเจอร์สำหรับการดูแผนผังพื้นที่จอดรถพร้อมตรวจสอบสถานะพื้นที่จอดรถแบบเรียลไทม์
+\subsubsection{Register / Login}
+ฟีเจอร์สำหรับสมัครสมาชิกและเข้าสู้ระบบ User เพื่อให้มีฐานข้อมูลในระบบและใช้งานระบบหลักได้
+\subsubsection{Reserve Parking}
+ฟีเจอร์สำหรับการจองพื้นที่จอดรถ โดยสามารถจองล่วงหน้าได้ 7 วันล่วงหน้า
+\vspace{-0.3cm}
 \begin{itemize}
-\item   What are the problems you are addressing? 
-\item  Why they are important?
-\item  What are the limitations of existing approaches? 
+    \item เลือกจองวันที่จะเข้ามาจอด
+    \item เลือกช่วงเวลาที่จะเข้ามาจอด (จองขั้นต่ำ 1 ชั่วโมง)
+    \item เลือกโซนพื้นที่จอดรถ โดยระบบจะแสดงที่ว่างให้เห็นชัดเจน ตามวันและเวลาที่เลือก
+\end{itemize}
+\clearpage
+\subsubsection{Check-in Parking}
+ฟีเจอร์สำหรับตรวจสอบข้อมูลผู้ใช้งานที่ต้องการเข้ามาพื้นที่จอดรถ
+\vspace{-0.3cm}
+\begin{itemize}
+    \item สำหรับ Guest ระบบจะค้นหาที่จอดรถที่ว่างและใกล้มากที่สุดให้กับผู้ใช้งาน และสร้าง QR Code Slip ให้สำหรับคนที่เข้ามาจอ walk-in โดยตัวระบบ จะรับค่า เบอร์โทร-ทะเบียนรถ ของตัวผู้ใช้งาน กระบวนการนี้ใช้เวลาไม่เกิน 3 นาทีต่อคัน ผ่าน Kiosk หลังจากนั้นไม้กั้นจะเปิดให้เข้ามาพื้นที่จอดรถอัตโนมัติ
+    \item สำหรับ Visitor/Staff/User(Login) ระบบจะค้นหาที่จอดรถที่ว่างและใกล้มากที่สุดให้กับผู้ใช้งาน หรือกรณีจองล่วงหน้าสำหรับการเข้าใช้งาน ระบบตรวจสอบฐานข้อมูลผู้ใช้อัตโนมัติหลังจากนั้น ไม้กั้นจะเปิดให้เข้ามาพื้นที่จอดรถอัตโนมัติ
 \end{itemize}
 
-\section{ประโยชน์ที่คาดว่าจะได้่รับ}
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.9\textwidth]{./Section 1/Stamp System.jpg}}
+\caption{Stamp System}\label{fig:Stamp System}
+\end{figure}
+\vspace{-1cm}
+\subsubsection{Received Stamp}
+ฟีเจอร์สำหรับเข้าร่วมในงาน หรือกิจกรรมต่างๆ และเข้าร่วมในงานเสร็จสิ้น หรือทำเงื่อนไขครบถูกต้อง ผู้เข้าร่วมได้รับ Stamp(โดย Stamp จะเป็น Code สุ่มสร้างใหม่ตลอดและสามารถกรอกใช้งาน ภายใน 15 นาที เท่านั้นเมื่อใช้แล้ว Code จะไม่สามารถนำกลับมาใช้ใหม่ได้)
 
-โครงงานนี้จะเป็นประโยชน์กับใคร ยังไง ทั้งในเชิงรูปธรรมและนามธรรม ในปัจจุบันหรือในอนาคตถ้านำไป
-ต่อยอด
+\subsubsection{Update Stamp}
+ฟีเจอร์สำหรับ Update ข้อมูลระบบด้วยการใส่ Code Stamp เพื่อให้ได้ส่วนลดค่าที่จอดได้
 
+\clearpage
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.9\textwidth]{./Section 1/Step Go Out.jpg}}
+\caption{Step Go Out}\label{fig:Step Go Out}
+\end{figure}
+\vspace{-1cm}
+\subsubsection{Pay Parking Bill}
+ฟีเจอร์สำหรับจ่ายเงินค่าที่จอดรถ (เฉพาะ User(Login) เท่านั้น) โดยมีเวลา 15 นาทีในการเดินทางไปยังจุด Check-out Parking เพื่อป้องกันคนจ่ายเงินและไม่ออกตามเวลาที่กำหนด
+
+\subsubsection{Check-out Parking}
+ฟีเจอร์สำหรับตรวจสอบข้อมูลผู้ใช้งานที่ต้องการออกจากพื้นที่จอดรถ
+\vspace{-0.3cm}
+\begin{itemize}
+    \item สำหรับ Guest ระบบจะทำการเก็บเงินค่าที่จอดรถตามระยะเวลาที่ได้จอดจริง โดยวิธีการชำระเงินผ่านทาง QR Code Slip ที่ได้ตอนเดินทางเข้ามายังพื้นที่จอดรถ(ถ้ามี Time Stamp จะได้ส่วนลดเพิ่มเติม) ผ่าน Kiosk หลังจากนั้นไม้กั้นจะเปิดให้ออกจากพื้นที่จอดรถอัตโนมัติ
+    \item สำหรับ Visitor/Staff/User(Login) โดยวิธีการชำระเงินผ่านทางเว็ปแอปพลิเคชัน ระบบตรวจสอบฐานข้อมูลผู้ใช้อัตโนมัติ (ถ้ามี Stamp จะได้ส่วนลดเพิ่มเติม) หลังจากนั้นไม้กั้นจะเปิดให้ออกจากพื้นที่จอดรถอัตโนมัติ
+\end{itemize}
+
+\subsection{ผู้ใช้งาน}
+กลุ่มผู้ใช้งานของระบบประกอบด้วย 8 กลุ่มหลัก ได้แก่ ผู้ใช้รถทั่วไปที่ต้องการจอดรถ, ผู้ใช้ที่ใช้ที่จอดรถในองค์กรนั่นๆ, ผู้ใช้งานที่ลงทะเบียนเข้าสู้ระบบ, แขกผู้ได้รับเชิญ, ผู้ที่มีส่วนร่วมกับการจัดการที่จอดรถ, ผู้จัดงานที่ต้องการควบคุมเกี่ยวกับสิทธิ์จอดรถของผู้เข้าร่วมงาน, ผู้ดูแลระบบ, ผู้ดูแลระบบขั้นสูง โดยแต่ละกลุ่มมีสิทธิ์การใช้งานและบทบาท แตกต่างกัน ดังนี้
+\subsubsection{ผู้ใช้งานภายนอกที่ต้องการจอดรถ ( Guest )}
+ผู้ใช้ประเภทนี้คือบุคคลทั่วไปที่ต้องการเข้ามาใช้บริการที่จอดรถ โดยไม่ใช่บุคลากรภายในองค์กรหรือผู้ที่ได้รับเชิญล่วงหน้า ไม่สามารถจองล่วงหน้าได้ หากต้องการเข้าจอดจะต้องใช้บริการตู้ kiosk เพื่อรับสลิปถึงจะเข้าใช้บริการได้ ในกลุ่มผู้ใช้งานนี้อาจจะมีค่าใช้จ่ายหากใช้บริการถึงกำหนด
+
+\subsubsection{ผู้ใช้งานที่ลงทะเบียนเข้าสู่ระบบ ( User )}
+ผู้ใช้ประเภทนี้คือบุคคลทั่วไปที่ต้องการเข้ามาใช้บริการที่จอดรถ โดยมีการลงทะเบียนเข้าสู่เว็ปแอปพลิเคชันและมีฐานข้อมูลอยู่ในระบบ สามารถตรวจสอบสถานะการจอดรถและแผนที่แบบเรียลไทม์ได้ และสามารถจองที่จอดรถล่วงหน้าได้ผ่านแอปพลิเคชัน ไม่จำเป็นต้องทำรายการที่ตู้กดอัตโนมัติเมื่อเข้าสู่พื้นที่ เนื่องจากข้อมูลถูกบันทึกไว้ในระบบแล้ว เมื่อรถเข้ามาถึง ไม้กั้นจะเปิดโดยอัตโนมัติ และระบบจะอัพเดตสถานะที่จอดรถทันที
+
+\subsubsection{ผู้ใช้ที่ใช้ที่จอดรถในองค์กรนั่นๆ ( Staff )}
+ผู้ใช้ประเภทนี้หมายถึงบุคลากรภายในองค์กรที่มีสิทธิ์การใช้งานระบบจอดรถโดยตรง ซึ่งจะมีการจำกัดพื้นที่เฉพาะไว้ให้สำหรับกลุ่มนี้แล้ว ตามระยะเวลาการทำงานที่กำหนดกับองค์กรเอาไว้ และกลุ่มผู้ใช้นี้สามารถตรวจสอบสถานะการจอดรถและแผนที่แบบเรียลไทม์ได้ สามารถจองที่จอดรถล่วงหน้าได้ผ่านแอปพลิเคชัน ไม่จำเป็นต้องทำรายการที่ตู้กดอัตโนมัติเมื่อเข้าสู่พื้นที่ เนื่องจากข้อมูลถูกบันทึกไว้ในระบบแล้ว เมื่อรถเข้ามาถึง ไม้กั้นจะเปิดโดยอัตโนมัติ และระบบจะอัพเดตสถานะที่จอดรถทันที
+
+\subsubsection{แขกผู้ได้รับเชิญ ( Visitor )}
+กลุ่มนี้หมายถึงผู้ที่ได้รับอนุญาตให้ใช้ที่จอดรถชั่วคราวตามคำเชิญขององค์กร ลักษณะการใช้งานใกล้เคียงกับ staff โดยระบบจะบันทึกข้อมูลไว้ล่วงหน้า ทำให้ไม่ต้องทำรายการที่ตู้กดอัตโนมัติ ไม้กั้นจะเปิดโดยอัตโนมัติ และระบบปรับสถานะการจอดรถเช่นเดียวกับ staff
+
+\subsubsection{ผู้ที่มีส่วนร่วมกับการจัดการที่จอดรถ ( Check-Admin )}
+ผู้ใช้กลุ่มนี้มีสิทธิ์ในการควบคุมและจัดการบางส่วนของระบบ โดยหน้าที่หลัก ได้แก่ ดูปัญหาที่เกิดขึ้นทั้งหมดในลานจอด, การเปิด–ปิดช่องจอดรถ, การควบคุมไม้กั้นทางเข้า–ออก (เปิดหรือปิดตามความจำเป็น)
+
+\subsubsection{ผู้จัดงานที่ต้องการควบคุมเกี่ยวกับสิทธิ์จอดรถของผู้เข้าร่วมงาน (invite-admin)}
+ผู้ใช้ประเภทนี้ได้รับสิทธิ์ในการจัดการเกี่ยวกับสิทธิ์การใช้งานที่จอดรถของบุคคลอื่น โดยเฉพาะในกรณีที่มีการจัดกิจกรรมหรือการประชุม โดยสามารถ มอบสิทธิ์ให้ Guest กลายเป็น Visitor เพื่อให้สามารถใช้งานระบบได้สะดวกขึ้น สิทธิ์ Invite-Admin จะมีวันหมดอายุ เมื่อครบกำหนด บทบาทจะถูกปรับกลับเป็น Staff โดยอัตโนมัติ
+
+\subsubsection{ผู้ดูแลระบบ (Admin)}
+Admin คือผู้ที่มีสิทธิ์ในการจัดการระบบ สามารถกำหนดค่าและควบคุมการทำงานได้ทุกอย่าง ได้แก่ ปรับเปลี่ยนเงื่อนไขการจอดฟรี, ปรับอัตราค่าบริการจอดรถต่อชั่วโมงได้ตามนโยบาย, เปิด–ปิดช่องจอดรถได้ตามความเหมาะสม, ควบคุมไม้กั้นอัตโนมัติทั้งทางเข้าและทางออก, จัดการสิทธิ์ผู้ใช้งาน ได้แก่ Check-Admin และ Invite-Admin พร้อมกำหนดระยะเวลาหมดอายุสิทธิ์การใช้งาน
+
+\subsubsection{ผู้ดูแลระบบขั้นสูง (Super Admin)}
+Super Admin คือผู้ที่มีสิทธิ์สูงสุดในการจัดการระบบ สามารถทำเงื่อนไขของ Admin, Check-Admin และ Invite-Admin ได้ทั้งหมด อีกทั้งยังสามารถกำหนดสิทธิ์การใช้งานของ User แต่ละประเภทได้
+
+\subsection{Operating Systems}
+เว็บไซต์สามารถใช้งานผ่าน Web Application บนระบบปฏิบัติการหลัก ได้แก่
+\vspace{-0.5cm}
+\subsubsection{\textnormal{Windows}}
+\subsubsection{\textnormal{MacOS}}
+\subsubsection{\textnormal{Android}}
+\subsubsection{\textnormal{IOS}}
+
+\clearpage
+\section{การแยกย่อยงาน และแผนการดำเนินงาน}
+ \textbf{รายงาน}
+\vspace{-0.5cm}
+\subsection{\textnormal{เลือกและศึกษาหัวข้อ Senior Project}}
+\subsection{\textnormal{จัดทำ Idea Document}}
+\subsection{\textnormal{จัดทำ Detailed Proposal}}
+\subsection{\textnormal{จัดทำ Detailed Proposal Final}}
+\subsection{\textnormal{เตรียมการนำเสนอโครงงานภาคการศึกษาที่ 1}}
+\subsection{\textnormal{นำเสนอโครงงานภาคการศึกษาที่ 1}}
+\subsection{\textnormal{จัดทำรายงานฉบับสมบูรณ์}}
+\subsection{\textnormal{เตรียมการนำเสนอโครงงานภาคการศึกษาที่ 2}}
+\subsection{\textnormal{นำเสนอโครงงานภาคการศึกษาที่ 2}}
+
+\vspace{0.5cm}
+\textbf{ศึกษาเทคโนโลยีและเครื่องมือที่จำเป็น}
+\vspace{-0.5cm}
+\subsection{\textnormal{ศึกษาเทคโนโลยีและเครื่องมือที่จำเป็น}}
+\subsubsection{\textnormal{ศึกษา Ionic และ Angular สำหรับ Frontend}}
+\subsubsection{\textnormal{ศึกษา Nest.js และ Supabase สำหรับ Backend}}
+\subsubsection{\textnormal{ศึกษา Docker สำหรับการ Deploy}}
+
+\subsection{\textnormal{วิเคราะห์และออกแบบระบบ}}
+\subsubsection{\textnormal{จัดทำ Use case Diagram และ Sequence Diagram}}
+\subsubsection{\textnormal{ออกแบบ Functional Requirement}}
+\subsubsection{\textnormal{ออกแบบ ER Diagram และโครงสร้างฐานข้อมูล}}
+
+\vspace{0.5cm}
+\textbf{การพัฒนาโมดูลการทำงานหลัก}
+\vspace{-0.5cm}
+\subsection{\textnormal{พัฒนา Backend}}
+\subsubsection{\textnormal{พัฒนา Backend}}
+\subsubsection{\textnormal{สร้าง GraphQL API}}
+\subsubsection{\textnormal{เชื่อมต่อ Supabase (Database และ Authentication)}}
+\subsubsection{\textnormal{สร้างระบบจัดการข้อมูล (ผู้ใช้, ช่องจอด, ประวัติการเข้า-ออก)}}
+
+\subsection{\textnormal{พัฒนา Frontend}}
+\subsubsection{\textnormal{ออกแบบ User Interface ด้วย Figma}}
+\subsubsection{\textnormal{พัฒนา Mobile Application ด้วย Ionic + Angular}}
+\subsubsection{\textnormal{เชื่อมต่อกับ Backend ผ่าน API)}}
+
+\clearpage
+\textbf{การรวมระบบและทดสอบ}
+\vspace{-0.5cm}
+\subsection{\textnormal{สร้าง Prototype ของระบบ}}
+\subsubsection{\textnormal{รวม Frontend + Backend + LPR Module}}
+\subsubsection{\textnormal{ทดสอบการทำงานเบื้องต้น}}
+
+\subsection{\textnormal{การทดสอบระบบ}}
+\subsubsection{\textnormal{สร้าง Test Cases}}
+\subsubsection{\textnormal{ทำ Unit Testing}}
+\subsubsection{\textnormal{Integration Testing}}
+\subsubsection{\textnormal{Usability Testing (ทดสอบกับผู้ใช้งานจริง)}}
+
+\vspace{0.5cm}
+\textbf{การ Deploy และการส่งมอบ}
+\vspace{-0.5cm}
+\subsection{\textnormal{Deploy ระบบ}}
+\subsubsection{\textnormal{ติดตั้งระบบด้วย Docker และ Supabase}}
+\subsubsection{\textnormal{ทดสอบระบบ Staging และ Production}}
+
+\subsection{\textnormal{จัดทำเอกสารประกอบโครงงาน}}
+\subsubsection{\textnormal{เอกสารคู่มือผู้ใช้}}
+\subsubsection{\textnormal{เอกสาร API Documentation}}
+\subsubsection{\textnormal{Integration Testing}}
+\subsubsection{\textnormal{Deployment Guide}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%  ตารางการดำเนินงาน %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
 \section{ตารางการดำเนินงาน}
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.9\textwidth]{./Section 1/Gantt chart 1.png}}
+\caption{ตารางการดำเนินโครงงาน ภาคการศึกษาที่ 1/2568}\label{fig:Gantt chart 1}
+\end{figure}
+
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.9\textwidth]{./Section 1/Gantt chart 2.png}}
+\caption{ตารางการดำเนินโครงงาน ภาคการศึกษาที่ 1/2568 ( ต่อ )}\label{fig:Gantt chart 2}
+\end{figure}
+
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.9\textwidth]{./Section 1/Gantt chart 3.png}}
+\caption{ตารางการดำเนินโครงงาน ภาคการศึกษาที่ 2/2568}\label{fig:Gantt chart 3}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%  ตารางการดำเนินงาน %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{ แผนการดำเนินงาน}
+
+\subsection{ผลการดำเนินงานในภาคการศึกษาที่ 1}
+
+\subsubsection{\textnormal{จัดทำรายงานความก้าวหน้าฉบับกลางภาค (บทที่ 1-3) ได้แก่}}
+\begin{itemize} 
+    \item บทที่ 1 ความเป็นมาและวัตถุประสงค์
+    \item บทที่ 2 ทบทวนวรรณกรรมที่เกี่ยวข้อง
+    \item บทที่ 3 วิธีการดำเนินงานและเครื่องมือที่ใช้
+\end{itemize}
+
+\subsubsection{\textnormal{ออกแบบโครงสร้างของแอปพลิเคชัน}}
+\begin{itemize} 
+    \item แผนผังภาพรวมระบบ (System Overview)
+    \item แผนผังการทำงาน (Flowchart, Sequence Diagram)
+    \item Use Case Diagram และ User Journey
+    \item ออกแบบหน้าตาเบื้องต้น (UI Wireframe \& Mockup บน Figma)
+\end{itemize}
+
+\subsubsection{\textnormal{ออกแบบโครงสร้างฐานข้อมูล (Database Schema) และ ER-Diagram}}
+
+\subsection{ผลการดำเนินงานในภาคการศึกษาที่ 2}
+
+\subsubsection{\textnormal{จัดทำรายงานฉบับสมบูรณ์ (รวมบทที่ 1-5)}}
+\begin{itemize} 
+    \item เพิ่มผลการทดลองและสรุปผลการดำเนินงาน
+\end{itemize}
+
+\subsubsection{\textnormal{พัฒนาโมเดล Machine Learning สำหรับ Image Classification และ Volume Estimation สำเร็จ}}
+
+\subsubsection{\textnormal{พัฒนาโมเดล Chatbot เพื่อช่วยตอบคำถามผู้ใช้งาน/เจ้าหน้าที่}}
+
+\subsubsection{\textnormal{พัฒนาแอปพลิเคชัน (Front-end: Ionic + Angular / Back-end: Express js + Supabase)}}
+\begin{itemize} 
+    \item เชื่อมต่อกับระบบสแกนป้ายทะเบียน
+    \item เชื่อมต่อกับฐานข้อมูลและ ML Model
+    \item เชื่อมต่อกับ Chatbot
+\end{itemize}
+
+\subsubsection{\textnormal{ทดสอบการใช้งาน (Testing \& QA)}}
+\begin{itemize} 
+    \item Unit Test, Integration Test
+    \item User Acceptance Test (UAT)
+    \item แก้ไขปรับปรุงตามผลการทดสอบ
+\end{itemize}
 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%  Literature Review %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%  ทฤษฎีความรู้และงานที่เกี่ยวข้อง %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{ทฤษฎีความรู้และงานที่เกี่ยวข้อง}
 
 \emph{หัวข้อต่าง ๆ ในแต่ละบทเป็นเพียงตัวอย่างเท่านั้น หัวข้อที่จะใส่ในแต่ละบทขึ้นอยู่กับโปรเจคของนักศึกษาและอาจารย์ที่ปรึกษา}
+\section{ทฤษฎีที่เกี่ยวข้อง}
 
-ตัวอย่างการใส่อ้างอิงที่มา -> \cite{hypersense} ถ้าต้องการใส่แหล่งอ้างอิงมากกว่า 1 ให้ทำดังนี้ -> \cite{hypersense,bworld} 
-อธิบายทฤษฎี องค์ความรู้หลักที่ใช้ในงาน งานวิจัยที่นำมาใช้ในโครงงาน หรือเปรียบเทียบผลิตภัณฑ์ที่มีอยู่ในท้องตลาด\cite{bworld}
-Explain theory, algorithms, protocols, or existing research works and tools related to your work. 
+\subsection{Hexagonal Architecture}
+จากการสัมภาษณ์แบบตัวต่อตัวและแบบสอบถามเห็นได้ว่าระบบที่มีอยู่อาจจะยังไม่สามารถตอบโจทย์การใช้งานที่ครอบคลุมกลุ่มผู้ใช้หลากหลายประเภท ไม่ว่าจะเป็น user ที่ต้องการจองล่วงหน้า guest ที่เข้ามาใช้งานทันที หรือ visitor ที่ได้รับเชิญพิเศษ อีกทั้งยังขาดการนำฟีเจอร์ใหม่ๆ เช่น การเข้าสู่ระบบด้วย passkey และระบบ e-Stamp สำหรับส่วนลด ดังนั้น ระบบที่พวกเรานำเสนอในงานนี้จะเน้นการพัฒนา แพลตฟอร์มจัดการลานจอดรถแบบครอบคลุม ที่สามารถรองรับผู้ใช้ทุกประเภท เชื่อมต่อกับตู้ Check-in/Check-out รองรับการชำระเงินออนไลน์ และเพิ่มความสะดวกสบายด้วย Service ด้านความปลอดภัย
 
+\subsection{Event Sourcing}
+เป็นรูปแบบการจัดเก็บข้อมูลที่บันทึกการเปลี่ยนแปลงของระบบในรูปของ events แทนการเก็บแบบ current state โดยแต่ละ event คือสิ่งที่เกิดขึ้นในระบบและจะถูกบันทึกเป็น event  และเก็บลงใน event store ซึ่งจะสามารถ replay เพื่อสร้าง current state ได้ตลอดและสามารถ ย้อนกลับมาตรวจสอบ event ที่เกิดขึ้น และรองรับให้สามารถเช็คย้อนหลังได้ และช่วยในการวิเคราะห์พฤติกรรมของผู้ใช้ได้ นอกจางนี้ยังสามารถนาปรับใช้กับการออกแบบระบบแบบ distributed systems และ microservices ที่ต้องการความสอดคล้องกันแบบ eventual consistency และ event-driven communication
 
-\section{ระบบแนะนำสินค้า}
+\subsection{CQRS (Command Query Responsibility Segregation)}
+CQRS เป็นรูปแบบการออกแบบ Microsevice ที่แยกหน้าที่ของการเขียนข้อมูล ออกจากการอ่านข้อมูล โดยแต่ละส่วนจะมีรูปแบบของตนเองที่ออกแบบมาโดยเฉพาะ ฝั่งเขียน จะรับผิดชอบการเปลี่ยนแปลงข้อมูลของระบบ เช่น สร้าง แก้ไข หรือลบข้อมูล โดยไม่คืนค่าผลลัพธ์ของข้อมูลที่ใช้ ส่วนฝั่งอ่านจะรับผิดชอบการดึงข้อมูลมาแสดงผล โดยไม่กระทบต่อสถานะของระบบ การแยกนี้ช่วยให้แต่ละฝั่งสามารถปรับแต่งให้เหมาะสมกับงานเฉพาะ เช่น ปรับประสิทธิภาพ scalability อีกทั้งในระบบที่มีความซับซ้อนสูง หรือมีความต้องการด้านอ่านข้อมูลบ่อยแต่เขียนข้อมูลน้อย การใช้ CQRS จะช่วยลดคอขวด และทำให้โค้ดมีความเป็นระเบียบ และดูแลรักษาได้ง่ายขึ้น
 
-\begin{table}[!h]
-\caption{test table method1}\label{tbl:method1}
-\begin{tabular}{c|c|l|rr} \hline\hline
-Center & Center & left aligned & Right & Right aligned \\ \hline\hline
-Center & Center & left aligned & Right & Right aligned \\ \hline
-Center & Center & left aligned & Right & Right aligned \\ 
-Center & Center & left aligned & Right & Right aligned \\ \hline
-Center & Center & left aligned & Right & Right aligned \\ \hline\hline
-\end{tabular}
-\end{table}
+\subsection{Service Mesh}
+คือโครงสร้างพื้นฐานที่ช่วยจัดการการสื่อสารระหว่าง microservices โดยแยกการทำงานด้านเครือข่ายและการทำงานร่วมกันของบริการออกจาก business logic ของแต่ละ service เพื่อให้แต่ละ microservices ไม่ต้องรับผิดชอบงานเช่น discovery, load balancing, routing, retry, circuit breaking, security, policy enforcement, และ observability  โดยตรง ซึ่งการมี Service Mesh ช่วยให้ระบบสามารถปรับปรุง resilience ลดความผิดพลาด เพิ่มความปลอดภัย, และมองเห็นภาพรวมของระบบได้ดีขึ้น
 
 
-\section{อัลกอริทึมในการประมวลผลข้อความ}
-\subsection{อัลกอริทึม I}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%  ผลิตภัณฑ์ที่มีอยู่ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\section{ผลิตภัณฑ์ที่มีอยู่}
+ผลิตภัณฑ์ที่มีอยู่แล้วในปัจจุบันมีหลายระบบที่ถูกนำมาใช้เพื่อจัดการพื้นที่ลานจอดรถ โดยระบบที่เป็นที่รู้จักที่สุดคือแอปพลิเคชัน เช่น EasyPark และ ParkMobile ซึ่งเปิดให้ผู้ใช้สามารถค้นหาพื้นที่ลานจอดรถ จองล่วงหน้า และชำระเงินผ่านสมาร์ทโฟน โดยจุดเด่นของระบบเหล่านี้คือความสะดวกในการค้นหาและจ่ายเงิน แต่ข้อจำกัดที่พบเห็นคือระบบออกแบบมาเพื่อผู้ใช้ที่ทำการจองเท่านั้น ไม่ได้รองรับผู้ที่เข้ามาใช้แบบ guest หรือ visitor อีกตัวอย่างหนึ่งคือ Parkopedia ซึ่งให้บริการข้อมูลพื้นที่ลานจอดรถในหลายเมืองทั่วโลก ระบบนี้สามารถบอกตำแหน่งที่ลานจอดว่าง อัตราค่าบริการ และรีวิวจากผู้ใช้ แต่ Parkopedia ไม่ได้ให้บริการในด้าน การจัดการ โดยตรง เช่น การเช็กอิน/เช็กเอาต์ หรือการออกตั๋วอิเล็กทรอนิกส์สำหรับชำระเงิน
+\vspace{0.3cm}
 
-% Can define this in the preamble..
-You can place the figure and refer to it as รูปที่~\ref{fig:model2}.
-The figure and table numbering will be run and updated automatically when you add/remove tables/figures from the document.
+และในประเทศไทย ระบบลานจอดรถของ ห้างสรรพสินค้าและศูนย์การค้า ส่วนใหญ่ยังคงใช้บัตรกระดาษหรือบัตรแม่เหล็ก ผู้ใช้สามารถนำบัตรไปแสตมป์ที่ร้านค้าเพื่อรับสิทธิ์ลดค่าจอด วิธีนี้ได้รับความนิยมและเป็นที่คุ้นเคยของผู้ใช้ แต่ยังเป็นระบบแบบออฟไลน์ ที่ต้องใช้แรงงานคนและยังเสี่ยงต่อการทำบัตรหาย อีกทั้งยังไม่สามารถเชื่อมต่อกับระบบออนไลน์ได้โดยตรง ขณะเดียวกัน มีบางพื้นที่ที่เริ่มใช้ เทคโนโลยี Smart Parking เช่น กล้อง License Plate Recognition (LPR) ที่ตรวจจับทะเบียนรถเพื่อเปิดไม้กั้นอัตโนมัติ หรือการใช้ QR Code สำหรับชำระเงินค่าจอดผ่าน e-wallet แม้จะทันสมัย แต่ระบบเหล่านี้มีข้อจำกัดในแง่ต้นทุนสูง และยังไม่รองรับการใช้งานในเชิงยืดหยุ่น เช่น การมอบสิทธิ์การจองให้ visitor หรือการใช้ส่วนลดด้วย code stamp ดิจิทัล
+\vspace{0.3cm}
 
-\begin{figure}[!h]\centering
-\setlength{\fboxrule}{0.2mm} % can define this in the preamble
-\setlength{\fboxsep}{1cm}
-\fbox{\includegraphics[width=5cm]{./model2.pdf}}
-\caption{The network model}\label{fig:model2}
-\end{figure}
+จากการสำรวจสิ่งที่มีอยู่จริงพวกเราจึงเห็นได้ว่าแม้ระบบต่าง ๆ จะช่วยให้ผู้ใช้สะดวกขึ้น แต่ยังไม่สามารถรวมความสามารถที่หลากหลายไว้ในแพลตฟอร์มเดียวกันได้ โดยเฉพาะการจัดการผู้ใช้หลายประเภทที่เราเขากำลังจะทำ การออกตั๋วอิเล็กทรอนิกส์ที่เชื่อมกับระบบชำระเงิน และการใช้ e-stamp แบบออนไลน์เพื่อรับสิทธิ์ลดค่าจอด รวมถึงระบบที่พัฒนาขึ้นในงานนี้จึงเป็นการเติมส่วนที่ขาดไป โดยนำจุดเด่นของแต่ละผลิตภัณฑ์มารวมกันและเพิ่มความแตกต่างให้กันผลิตภัณฑของพวกเรา
 
- 
-\subsection{อัลกอริทึม II}
-Add more subsections as you want.
-\subsubsection{ขั้นตอนที่ 1}
-\subsubsection{ขั้นตอนที่ 2}
-Latex Format นี้รองรับหัวข้อย่อยถึงแค่ระดับ 4 นี้เท่านั้น ไม่แนะนำให้แบ่งหัวข้อย่อยไปมากกว่านี้ เช่น 2.2.2.2.1 , 2.2.2.2.2
 
-\section{เครื่องมือที่ใช้ในการพัฒนา}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -332,29 +551,87 @@ Latex Format นี้รองรับหัวข้อย่อยถึง�
 
 \emph{หัวข้อต่าง ๆ ในแต่ละบทเป็นเพียงตัวอย่างเท่านั้น หัวข้อที่จะใส่ในแต่ละบทขึ้นอยู่กับโปรเจคของนักศึกษาและอาจารย์ที่ปรึกษา}
 
-
-ตัวอย่างการใส่อ้างอิงที่มา -> \cite{hypersense} ถ้าต้องการใส่แหล่งอ้างอิงมากกว่า 1 ให้ทำดังนี้ -> \cite{hypersense,bworld} 
-Explain the design (how you plan to implement your work) of your project. Adjust the section titles below to suit the types of your work. Detailed physical design like circuits and source codes should be placed in the appendix.
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%  การสำรวจความต้องการกับผู้ใช้ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{การสำรวจความต้องการกับผู้ใช้}
+\subsection{การสัมภาษณ์เชิงคุณภาพแบบตัวต่อตัว}
+[เติมข้อมูล]โพสต์คอมเมนต์ ซีดาน กิฟท์ เคสกลาสฟยอร์ดหลวงพี่อยุติธรรม เบิร์นเยอร์บีรา บูมวิลเลจ ฟลุครูบิกอุปสงค์สะบึมส์ภควัทคีตา วีไอพี ชัวร์ละติน ชีสเทอร์โบฟยอร์ดต่อยอด คาเฟ่อัลมอนด์แฟนตาซีเยอร์บีราฮองเฮา แมคเคอเรลมาเฟียน็อกว่ะบริกร โพลล์แบล็กสเตย์พาสตา สไลด์ดีพาร์ตเมนท์ติ๋มแพทยสภา ปัจเจกชนสุริยยาตร ปาร์ตี้ไนน์แฟกซ์ปาสเตอร์ตู้เซฟ
+ฟรุตสป็อตตะหงิดสเก็ตช์ ไวอะกร้าแรงใจเต๊ะ สเตชั่นเสกสรรค์ แบรนด์ล็อตเสือโคร่งแชมเปี้ยนวาไรตี้ อุปนายิกาแตงโมสติ๊กเกอร์สเก็ตช์นินจา คันธาระรามเทพไฮเอนด์ไทม์ แคมป์สุริยยาตร์ตรวจทานลิมิตจังโก้ เย้ว ต่อรองซีเนียร์บิ๊กอิ่มแปร้แบรนด์ สต๊อคชาร์ต โปสเตอร์ มาม่าแพกเกจทัวร์ เปียโนปูอัดแมชีนโกะแฟรี่ สตรอเบอรีแซมบ้าดิกชันนารีวาไรตี้ โชห่วยเพียบแปร้ ทอล์คแอ๊บแบ๊วมินท์ไวอะกร้า
+แดนซ์แดนซ์วอฟเฟิลสต๊อค หน่อมแน้มใช้งานสตรอเบอรีอพาร์ทเมนท์ฮิบรู แกรนด์ฟรังก์ผู้นำ บริกร เนิร์สเซอรีบ็อกซ์ยอมรับโจ๋ โหงวเฮ้ง ถูกต้องคอรัปชันรันเวย์ แชมเปี้ยนแมชีนรีเสิร์ช ศิรินทร์ซ้อตุ๊ดยอมรับ แอ็กชั่นมอคคาเทวาอิ่มแปร้คอนแท็ค แชมเปญ ซูเปอร์ ซีดาน ไลน์เที่ยงคืนสติ๊กเกอร์บัตเตอร์ครัวซองต์ สามช่าภควัมบดีเอ็กซ์โป ช็อปปิ้งครูเสดโอเวอร์
+แชมเปี้ยนวาริชศาสตร์มัฟฟิน ฮอตดอกกิมจิเคลมวอลซ์พุทธศตวรรษ เลดี้แตงกวาออดิทอเรียมแคมป์สเตย์ เคลมแจ็กพอตอุตสาหการครูเสด ขั้นตอน เที่ยงคืนบ็อกซ์บูมแจ็กเก็ตมยุราภิรมย์ ศิรินทร์ อะสลัมแอลมอนด์แฟนซีเซรามิก เซรามิกการันตี ชาร์ตโมเต็ลจูน เมเปิลเซรามิกเพาเวอร์โลชั่นคำตอบ บัลลาสต์ แคนยอน เลสเบี้ยน บลอนด์แอดมิสชันสโตร์เดี้ยง โปรเจ็กต์จูเนียร์สเตริโอบิ๊กตะหงิด
+ซีเรียสโปรเจ็ค ถูกต้องมาร์ตเมคอัพ โครนาแพทยสภาโปรโมเตอร์จ๊าบโปรโมเตอร์ ออร์แกนสไตรค์เชอร์รี่ไฮเทคมั้ง โลโก้ยิวเช็งเม้งอัลมอนด์ โปรเจ็คสหัชญาณเอ็กซ์โปบาร์บี้ คัตเอาต์สจ๊วตครัวซองแซมบ้าบึ้ม ปัจเจกชนไฮเทคอริยสงฆ์ออร์แกนแฮมเบอร์เกอร์ กลาสอิออนซูเอี๋ยรามาธิบดีการันตี ซีนีเพล็กซ์ไฮเอนด์ดยุกละอ่อนเทรลเลอร์ ไลน์ แจ็กพ็อตวันเวย์ปาสเตอร์ แคมเปญอพาร์ตเมนท์กุมภาพันธ์วีไอพี ตะหงิด จูเนียร์ซัพพลายเออร์ แบรนด์รามาธิบดีเที่ยงวันพาร์
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%  ข้อกำหนดของระบบ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\subsection{ข้อกำหนดของระบบ}
+\subsubsection{Functional Requirements (FR)}
+\begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.5} % เพิ่มความสูงบรรทัดให้ดูสบายตาเหมือนในรูป
+    \begin{tabularx}{\textwidth}{|l|X|} % X คือคอลัมน์ที่ยืดหดและตัดคำอัตโนมัติ
+        \hline
+        FR-01 Real-time Availability & ผู้ใช้ต้องสามารถดูสถานะที่จอดรถ (ว่าง/เต็ม) ได้แบบเรียลไทม์ผ่านแอปพลิเคชัน \\
+        \hline
+        FR-02 Zone-based Parking & ระบบต้องสามารถจำกัดการเข้าจอดในโซนต่างๆ ตามบทบาทของผู้ใช้ \\
+        \hline
+        FR-03 Digital Validation (E-Stamp) & ผู้ใช้สามารถใช้ QR Code ในแอปพลิเคชันเพื่อรับสิทธิ์จอดรถพิเศษได้ \\
+        \hline
+        FR-04 Automated Fee Calculation & ผู้ใช้สามารถใช้ QR Code ในแอปพลิเคชันเพื่อรับสิทธิ์จอดรถพิเศษได้ \\ 
+        % หมายเหตุ: ข้อความในรูปต้นฉบับ FR-04 ซ้ำกับ FR-03 ครับ ผมพิมพ์ตามรูปให้ก่อน
+        \hline
+        FR-05 Search and Filtering & ผู้ใช้สามารถค้นหาและกรองลานจอดรถตามโซนหรือชั้นได้ \\
+        \hline
+        FR-06 Admin Dashboard & ผู้ดูแลระบบ (Admin) สามารถจัดการข้อมูลผู้ใช้ กำหนดโซน และดูรายงานสถิติการใช้งานได้ \\
+        \hline
+        FR-07 Pre-booking & ผู้ใช้สามารถจองที่จอดรถล่วงหน้าได้ตามสิทธิ์ของตน \\
+        \hline
+    \end{tabularx}
+\end{table}
+% ---  Non-Functional Requirements ---
+\subsubsection{Non-Functional Requirements (NFR)}
+
+\begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabularx}{\textwidth}{|l|X|}
+        \hline
+        NFR-01 Usability & ต้องมี UI ที่ใช้งานง่าย แสดงผลแผนที่ชัดเจน และไม่ซับซ้อน \\
+        \hline
+        NFR-02 Performance & การอัพเดตสถานะลานจอดรถบนแผนที่ต้องแสดงผลภายใน 2 วินาที \\
+        \hline
+        NFR-03 Security & ระบบต้องมีการเข้ารหัสข้อมูลส่วนตัวและข้อมูลการชำระเงิน พร้อมระบบยืนยันตัวตนที่ปลอดภัย \\
+        \hline
+        NFR-04 Compatibility & ต้องทำงานได้บนระบบปฏิบัติการ iOS และ Android \\
+        \hline
+        NFR-05 Reliability & ระบบต้องมีความเสถียรและพร้อมใช้งานมากกว่า 90\% uptime โดยเฉพาะระบบเซ็นเซอร์และประตูทางเข้า-ออก \\
+        \hline
+    \end{tabularx}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%  ความสามารถของระบบ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
 \section{ความสามารถของระบบ}
 \subsection{Use Case Diagram}
 \begin{figure}[!h]\centering
  \setlength{\fboxrule}{0.2mm} 
 \setlength{\fboxsep}{5pt}  
-\fbox{\includegraphics[width=0.7\textwidth]{./Diagram/FastPass Diagram-Ues Case _การจอง.pdf}}
+\fbox{\includegraphics[width=0.6\textwidth]{./Diagram/FastPass Diagram-Ues Case _การจอง.pdf}}
 \caption{Ues Case Diagram (ระบบจอดรถ)}\label{fig:FastPass Diagram-Ues Case _การจอง}
 \end{figure}
 
-\clearpage
 \begin{figure}[!h]\centering
  \setlength{\fboxrule}{0.2mm} 
 \setlength{\fboxsep}{5pt}  
-\fbox{\includegraphics[width=0.7\textwidth]{./Diagram/FastPass Diagram-Use Case _ระบบจัดการส่วนกลาง.pdf}} 
+\fbox{\includegraphics[width=0.6\textwidth]{./Diagram/FastPass Diagram-Use Case _ระบบจัดการส่วนกลาง.pdf}} 
 \caption{Ues Case Diagram (ระบบจัดการส่วนกลาง)}\label{fig:model2}
 \end{figure}
-
+\clearpage
 \subsection{Use Case Narrative}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% การนำรถเข้าจอด %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -405,7 +682,6 @@ Explain the design (how you plan to implement your work) of your project. Adjust
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% การจองที่จอดรถ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\clearpage
 \subsubsection{การจองที่จอดรถ}
 \begin{table}[h!]
 \centering
@@ -856,6 +1132,7 @@ Explain the design (how you plan to implement your work) of your project. Adjust
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% จัดการสถานะช่องจอดรถ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
 \subsubsection{จัดการสถานะช่องจอดรถ}
 \begin{table}[h!] 
 \centering
@@ -962,6 +1239,254 @@ Explain the design (how you plan to implement your work) of your project. Adjust
 \end{table}
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% สถาปัตยกรรมระบบ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{สถาปัตยกรรมระบบ}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% ความคืบหน้า และงานในอนาคต %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Wireframe}
+\emph{ เซ็กซ์เคลมแจ๊กพอตหน่อมแน้มเห่ย เฟอร์นิเจอร์ สเก็ตช์โรลออนอันเดอร์ ไฮแจ็คแจ็กเก็ตสุริยยาตร์ เปียโน โปรโมเตอร์โบรกเกอร์แอพพริคอทเครป โทรโข่ง สคริปต์เยอร์บีร่าเลดี้ สเตอริโอดอกเตอร์แล็บเวสต์เปราะบาง ซิตี้เพลซ เชอร์รี่โซน พริตตี้เซ็นเซอร์สุนทรีย์อิเลียดแบ็กโฮ สต็อกสโลว์แซ็กซังเต บูติกโยโย่ซิมโฟนี่คอนเซ็ปต์ เลกเชอร์ มั้งเปราะบางแครกเกอร์
+แพนงเชิญ โค้ชซ้อฟลุตแฟรี่เต๊ะ ควีนแฟนตาซีแรลลี่ซีนีเพล็กซ์จูน โฟนคอร์รัปชันการันตีความหมายบ๋อย โปรเจกต์มอยส์เจอไรเซอร์สวีทล็อบบี้ แอดมิชชั่นป๋อหลอแอปเปิ้ลไอซ์เป็นไง คอนเซ็ปต์คอร์รัปชั่น เดบิตปัจเจกชนเนอะรุสโซไฮเวย์ รีทัชแล็บรัมคาสิโนฟลุท โยเกิร์ตคาแรคเตอร์ไมเกรนรูบิคตนเอง เลคเชอร์ซิ่งกุนซือคอรัปชัน คอร์รัปชั่น ชิฟฟอนสไตรค์สคริปต์ ฟินิกซ์ช็อปปิ้งวิทย์โพสต์เลดี้ แชมปิยองเพียบแปร้แคนูอาข่าไฮเอนด์ สต๊อคแมชีนหม่านโถวมิวสิคแจม }
+
+\clearpage
+\subsection{หน้าสำรวจ (Explore Page)}
+แสดงแผนที่ลานจอดรถแบบ Interactive Map พร้อมสัญลักษณ์บอกสถานะต่างๆ เช่น จำนวนที่ว่าง เต็ม ปิด จำนวนที่จอด
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.2\textwidth]{./Section 2/Explore Page.png}}
+\caption{หน้าสำรวจ Explore Page}\label{fig:Explore Page}
+\end{figure}
+
+
+\subsection{หน้าการจอง (Reserve Location Page)}
+แสดงรายละเอียดการจองสถานที่ลานจอด โดยผู้ใช้สามารถกำหนดจุดจอด, เลือกช่วงวันที่/เวลาเข้า-ออก, ดูจำนวนที่นั่งว่าง และดำเนินการจองต่อได้อย่างชัดเจน
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.8\textwidth]{./Section 2/Reserve Location Page.png}}
+\caption{หน้าการจอง (Reserve Location Page)}\label{fig:Reserve Location Page}
+\end{figure}
+
+\clearpage
+\subsection{หน้าบันทึกแล้ว (Bookmark Page)}
+แสดงรายการทั้งหมดที่ ผู้ใช้งานบันทึกเอาไว้ เผื่อเพิ่มความสะดวกรวดเร็วในการหาสถานที่สำหรับการใช้งาน
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.2\textwidth]{./Section 2/Bookmark Page.png}}
+\caption{หน้าบันทึกแล้ว (Bookmark Page)}\label{fig:Bookmark Page}
+\end{figure}
+
+\subsection{หน้าล่าสุด (History Page)}
+แสดงประวัติการใช้งานทั้งหมด โดยแบ่งเป็น 3 รายการ ได้แก่ กำลังดำเนินการ, เสร็จสิ้น และยกเลิก/ล้มเหลว 
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.8\textwidth]{./Section 2/History Page.png}}
+\caption{หน้าล่าสุด (History Page)}\label{fig:History Page}
+\end{figure}
+
+\clearpage
+\subsection{ หน้าโปรไฟล์ (Profile Page) }
+แสดงรายละเอียดของข้อมูลผู้ใช้งาน การตั้งค่าทั่วไป และรายการล่าสุดของผู้ใช้งานได้ โดยสามารถแก้ไขอัพเดทข้อมูลผู้ใช้ได้
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.8\textwidth]{./Section 2/Profile Page.png}}
+\caption{หน้าโปรไฟล์ (Profile Page)}\label{fig:Profile Page}
+\end{figure}
+
+\subsection{ หน้าจอหลักแอดมิน (Dashboard) }
+แสดงเกี่ยวกับรวมข้อมูลทั้งหมดไว้ในที่เดียวแอดมินสามารถเห็นแผนที่ของลานจอดทั้งหมด ดูได้ทันทีว่าลานไหนว่าง ลานไหนเต็ม พร้อมกราฟสถิติสรุปจำนวนที่จอดและการใช้งานแต่ละวัน
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.8\textwidth]{./Section 2/Dashboard.png}}
+\caption{หน้าจอหลักแอดมิน (Dashboard)}\label{fig:Dashboard}
+\end{figure}
+
+\clearpage
+\subsection{ หน้าระบบสถานะเรียลไทม์ (Real-time system status) }
+ข้อมูลจากแต่ละลานจอดจะอัปเดตอัตโนมัติ แสดงเป็นสี เพื่อให้แอดมินเห็นภาพรวมทั้งหมดแบบสดๆ และสามารถจัดการได้ทันที
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.8\textwidth]{./Section 2/Real-time system status.png}}
+\caption{หน้าระบบสถานะเรียลไทม์ (Real-time system status)}\label{fig:Real-time system status}
+\end{figure}
+
+\subsection{ หน้าระบบจัดการข้อมูลที่จอดรถ (Parking management system) }
+แสดงข้อมูลที่แอดมินสามารถเพิ่ม แก้ไข หรือลบข้อมูลของลานจอดได้เอง ได้แก่ ชื่อสถานที่, พิกัด GPS, จำนวนช่องจอด และประเภทของที่จอด รวมถึงอัปโหลดรูปภาพหรือแผนผังลานจอดได้ด้วย
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.8\textwidth]{./Section 2/Parking management system.png}}
+\caption{หน้าระบบจัดการข้อมูลที่จอดรถ (Parking management system)}\label{fig:Parking management system}
+\end{figure}
+
+\clearpage
+\subsection{ หน้าระบบจัดการผู้ใช้ (User management system) }
+สามารถจัดการบัญชีต่างๆ ได้ เช่น เจ้าของลานจอด พนักงาน หรือผู้ดูแลพื้นที่ โดยกำหนดสิทธิ์การเข้าถึงได้ตามระดับความรับผิดชอบ
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.8\textwidth]{./Section 2/User management system.png}}
+\caption{หน้าระบบจัดการผู้ใช้ (User management system)}\label{fig:User management system}
+\end{figure}
+
+\subsection{ หน้าขออนุญาตสิทธิ (Request permission) }
+สามารถจัดการสิทธิ์การเข้าถึง และบอกจำนวนคำขอ request ทั้งหมด
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.8\textwidth]{./Section 2/User management system.png}}
+\caption{หน้าขออนุญาตสิทธิ (Request permission)}\label{fig:Request permission}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% ความคืบหน้า และงานในอนาคต %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\section{ความคืบหน้า และงานในอนาคต}
+\subsection{ ด้านการออกแบบระบบ }
+\begin{itemize}
+    \item ในส่วนของ Architectural Design กลุ่มของพวกเราได้ทำการออกแบบสถาปัตยกรรมระบบโดยใช้หลักการ Microservices Architecture ร่วมกับรูปแบบ CQRS  และ Event Sourcing เพื่อรองรับการขยายตัวของระบบและการจัดการข้อมูลที่มีความซับซ้อน โดยได้กำหนดขอบเขตของ Service ต่างๆ เช่น User Service, Reservation Service และ Parking Service ไว้ชัดเจน
+    \item ในส่วนของ Database Design ได้ทำการออกแบบโครงสร้างข้อมูล Class Diagram เพื่อรองรับการเก็บข้อมูลผู้ใช้งาน, สถานะช่องจอด และประวัติการทำรายการของผู้ใช้งาน
+\end{itemize}
+
+\subsection{ การพัฒนาส่วน Front-end }
+คณะผู้จัดทำได้พัฒนา Mobile Application โดยใช้เฟรมเวิร์ก Ionic ร่วมกับ Angular และตกแต่งหน้าตาด้วย Tailwind CSS เพื่อให้ได้ User Interface ที่ทันสมัยและตอบสนองการใช้งาน Responsive โดยมีความคืบหน้าในการ Implement ฟีเจอร์หลักดังนี้
+
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.2\textwidth]{./Section 3/Parking Map Page.png}}
+\caption{Parking Map Page}\label{fig:Parking Map Page}
+\end{figure}
+\vspace{-0.5cm}
+
+\clearpage
+\subsubsection{ Parking Map Page }
+\begin{itemize}
+    \item พัฒนาหน้าแสดงผลแผนที่และรายการลานจอดรถ
+    \item ระบบสามารถแสดงสถานะลานจอดรถ (ว่าง/เต็ม/ปิดบริการ) และประเภทรถที่รองรับ (รถยนต์, EV, มอเตอร์ไซค์) ได้อย่างถูกต้อง
+    \item Implement ระบบค้นหาและตัวกรอง (Filter) สำหรับแยกประเภทรถและสถานะ
+\end{itemize}
+
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.2\textwidth]{./Section 3/Parking Detail Page.png}}
+\caption{Parking Detail Page}\label{fig:Parking Detail Page}
+\end{figure}
+
+\subsubsection{ Parking Detail Page }
+\begin{itemize}
+    \item พัฒนาหน้ารายละเอียดลานจอดรถ  ซึ่งแสดงข้อมูลความจุ, เวลาเปิด-ปิดตามตารางกิจกรรม , และสิ่งอำนวยความสะดวก
+    \item รองรับการแสดงผลตารางเวลาแบบ Dynamic ตามวันในสัปดาห์
+\end{itemize}
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.2\textwidth]{./Section 3/Parking Detail Page.png}}
+\caption{Parking Detail Page}\label{fig:Parking Detail Page}
+\end{figure}
+
+\clearpage
+\subsubsection{ Reservation Page}
+\begin{itemize}
+    \item พัฒนาระบบเลือกวันและเวลาในการจอง โดยมีการตรวจสอบช่วงเวลา (Time Slot) ความถี่ 15-60 นาที และตรวจสอบสถานะว่าง/เต็ม เบื้องต้นด้วย Mock Data
+    \item พัฒนาระบบเลือกชั้นและโซนที่จอดรถ รองรับการกรองข้อมูลแบบ Real-time บนหน้าจอ
+    \item พัฒนาหน้าจอ Visual Grid สำหรับเลือกช่องจอดรถแบบระบุตำแหน่ง (Specific Slot Selection) ผู้ใช้สามารถเห็นผังช่องจอด เลือกช่องที่ต้องการ และระบบจะแสดงสถานะ (Available/Booked/Selected) ได้อย่างถูกต้อง
+    \item พัฒนาหน้าสรุปข้อมูลการจอง แสดงรายละเอียด สถานที่, เวลา, ประเภทรถ, และตำแหน่งช่องจอด ก่อนกดยืนยัน
+\end{itemize}
+
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.2\textwidth]{./Section 3/Reservation Page.png}}
+\caption{Reservation Page}\label{fig:Reservation Page}
+\end{figure}
+
+\clearpage
+\subsection{ การจำลองข้อมูลและการทดสอบเบื้องต้น (Data Simulation) }
+\begin{figure}[!h]\centering
+\setlength{\fboxrule}{0.2mm}
+\setlength{\fboxsep}{5pt}  
+\fbox{\includegraphics[width=0.2\textwidth]{./Section 3/Data Simulation Page.png}}
+\caption{Data Simulation Page}\label{fig:Data Simulation Page}
+\end{figure}
+
+เนื่องจากระบบ Backend อยู่ระหว่างการพัฒนาเชื่อมต่อ ในเฟสนี้จึงได้ทำการสร้าง Mock Data Services ภายใน Application เพื่อจำลองสถานการณ์ต่างๆ เช่น การจำลองสถานะช่องจอดเต็ม, การจำลองตารางเวลาเปิด-ปิดของตึก, และการจำลองการส่งข้อมูลระหว่าง Component เพื่อทดสอบ User Journey ให้สมบูรณ์
+
+\subsection{ ความคืนหน้าเมื่อเปรียบเทียบกับแผนการดำเนินงาน }
+% ตรวจสอบว่าใส่ package นี้ในส่วนบนสุดของไฟล์หรือยังนะครับ
+% \usepackage{tabularx}
+% \usepackage[table]{xcolor}
+% \usepackage{float}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \definecolor{lightgray}{gray}{0.9}
+    \begin{tabularx}{\textwidth}{| >{\raggedright\arraybackslash}p{4.5cm} | l | >{\raggedright\arraybackslash}X | l |}
+        \hline
+        \rowcolor{lightgray} 
+        \textbf{งานในแผน} & \textbf{ช่วงเวลา} & \textbf{ปัจจุบัน} & \textbf{การประเมินผล} \\
+        \hline
+        1. ออกแบบและสร้างต้นแบบแอปพลิเคชัน & ต.ค. - พ.ย. & พัฒนาหน้าจอ UI เสร็จสมบูรณ์พร้อม Interactive Animation & ล่าช้าเล็กน้อย \\
+        \hline
+        2. พัฒนาระบบแสดงผลแผนที่ & พ.ย. - ธ.ค. & ระบบแผนที่ทำงานสมบูรณ์ รองรับ Geohash, Pin และการระบุตำแหน่งผู้ใช้ & ล่าช้าเล็กน้อย \\
+        \hline
+        3. เชื่อมต่อฐานข้อมูลและ API & พ.ย. - ธ.ค. & อยู่ระหว่างการจำลองข้อมูล เพื่อทดสอบการทำงานฝั่งหน้าบ้าน ก่อนเชื่อมต่อระบบจริง & ล่าช้าเล็กน้อย \\
+        \hline
+        4. พัฒนาระบบตรวจสอบเงื่อนไขการจอง & พ.ย. & พัฒนาอัลกอริทึมตรวจสอบช่วงเวลา, การเช็ค Cron Schedule และการเลือกช่องจอดแบบระบุตำแหน่งเสร็จสมบูรณ์ & ล่าช้าเล็กน้อย \\
+        \hline
+        5. เชื่อมต่อระบบทั้งหมด & ธ.ค. & ยังไม่ได้เริ่มการเชื่อมต่อ Frontend เข้ากับ Backend จริง & รอดำเนินการ \\
+        \hline
+    \end{tabularx}
+    \caption{ตารางสรุปผลการดำเนินงานเปรียบเทียบกับแผนงาน}
+    \label{tab:project_status_comparison}
+\end{table}
+\clearpage
+การประเมินผลความคืบหน้า (Evaluation of Current Progress) จากการประเมินผลการดำเนินงานในปัจจุบันเทียบกับแผนงาน (Gantt Chart) พบว่า
+\begin{itemize}
+    \item การออกแบบ UX/UI และการพัฒนา Frontend Application มีความคืบหน้าไปกว่า 60เปอร์เซ็น ของฟีเจอร์ฝั่งผู้ใช้งานทั่วไป ระบบการจอง สามารถทำงานได้ไหลลื่นในระดับ Prototype
+    \item การเชื่อมต่อกับ Backend (API Integration) และระบบฐานข้อมูลจริงยังอยู่ในระยะเริ่มต้น การพัฒนาโมดูล AI สำหรับตรวจจับป้ายทะเบียน อยู่ในขั้นตอนการศึกษาและทดลองโมเดล ซึ่งต้องเร่งดำเนินการเพื่อให้ทันต่อการรวมระบบในเทอมถัดไป
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% แผนการดำเนินงานในภาคการศึกษาถัดไป  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ แผนการดำเนินงานในภาคการศึกษาถัดไป }
+เพื่อให้โครงงานเสร็จสมบูรณ์ตามวัตถุประสงค์ คณะผู้จัดทำได้วางแผนการดำเนินงานสำหรับภาคการศึกษาที่ 2 ดังนี้
+\subsubsection{ Backend Development and Integration (เดือนที่ 1-2) }
+\begin{itemize}
+    \item พัฒนา API ให้ครบทุก Service ตามที่ออกแบบไว้ (Auth, Reservation, Payment)
+    \item เชื่อมต่อ Frontend เข้ากับ Supabase (Real Database) เพื่อแทนที่ Mock Data ทั้งหมด
+    \item Implement ระบบ Authentication และ Authorization แบ่งสิทธิ์ User, Staff, Admin
+\end{itemize}
+
+\subsubsection{ Advanced Features Development (เดือนที่ 3) }
+\begin{itemize}
+    \item พัฒนาระบบ E-Stamp และ QR Code สำหรับส่วนลด
+    \item พัฒนาระบบ Admin Dashboard สำหรับดูสถิติและจัดการพื้นที่
+\end{itemize}
+
+\subsubsection{ Testing and Deployment (เดือนที่ 4) }
+\begin{itemize}
+    \item ทำการทดสอบระบบแบบ Integration Testing (Frontend + Backend + AI)
+    \item ทำการทดสอบ User Acceptance Test กับกลุ่มผู้ใช้งานตัวอย่าง
+    \item Deploy ระบบขึ้น Server จริง (Docker/Cloud) และจัดทำรายงานฉบับสมบูรณ์
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%% Experiments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
